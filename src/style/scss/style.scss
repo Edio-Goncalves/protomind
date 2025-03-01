@@ -1,0 +1,36 @@
+@use "forward" as fw;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+  /* HERO */
+  .hero {
+  }
+  /* HELLO */
+  .hello {
+  }
+  /* ABOUT */
+  .about {
+  }
+  /* SERVICE */
+  .service {
+  }
+  /* PROTOTYPES */
+  .prototypes {
+  }
+  /* PRICE */
+  .prices {
+  }
+  /* FAQ */
+  .faq {
+  }
+  /* CONTACT */
+  .contact {
+  }
+  /* FOOTER */
+  footer {
+  }
+}

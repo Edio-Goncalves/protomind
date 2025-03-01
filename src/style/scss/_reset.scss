@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #333333;
+  scrollbar-width: auto;
+  scrollbar-color: #3c5e8b #f3faff;
+}
+html {
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+  scroll-padding: 3rem;
+  display: flex;
+}
+body {
+  width: 100%;
+}
