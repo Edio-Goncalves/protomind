@@ -1,5 +1,5 @@
 // Animação do FAQ
-const faqArrows = document.querySelectorAll(".questions > img");
+const faqArrows = document.querySelectorAll(".questions");
 
 faqArrows.forEach((arrow) => {
   arrow.addEventListener("click", (event) => {
