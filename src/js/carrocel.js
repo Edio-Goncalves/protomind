@@ -7,13 +7,26 @@ document.addEventListener("DOMContentLoaded", () => {
   let autoPlayInterval;
   let isHovering = false;
 
+  // Função que retorna a quantidade de itens visíveis com base na largura da janela
+  function getMaxVisibleItems() {
+    if (window.innerWidth <= 910) {
+      return 2;
+    } else if (window.innerWidth <= 1200) {
+      return 3;
+    } else {
+      return 4;
+    }
+  }
+
   function updateCarousel() {
     const itemWidth = items[0].offsetWidth + 40; // 20px é o gap
     wrapper.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
   }
 
   function nextSlide() {
-    if (currentIndex < items.length - 4) {
+    const maxVisible = getMaxVisibleItems();
+    // Se o currentIndex for menor que a quantidade de itens menos os visíveis
+    if (currentIndex < items.length - maxVisible) {
       currentIndex++;
     } else {
       currentIndex = 0; // Reset para o início
