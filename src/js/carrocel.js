@@ -9,12 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Função que retorna a quantidade de itens visíveis com base na largura da janela
   function getMaxVisibleItems() {
-    if (window.innerWidth <= 910) {
-      return 2;
-    } else if (window.innerWidth <= 1200) {
-      return 3;
-    } else {
-      return 4;
+    switch (true) {
+      case window.innerWidth <= 500:
+        return 1;
+      case window.innerWidth <= 910:
+        return 2;
+      case window.innerWidth <= 1200:
+        return 3;
+      default:
+        return 4;
     }
   }
 
