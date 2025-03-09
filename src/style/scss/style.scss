@@ -2158,6 +2158,8 @@
 
 /* TERMOS DE SERVIÇOS E POLÍTICAS DE PRIVACIDADES */
 .termos-politicas {
+  margin-left: 60px;
+  margin-right: 60px;
   header {
     display: flex;
     align-items: center;
@@ -2170,6 +2172,7 @@
       align-items: center;
       gap: 5px;
       cursor: pointer;
+      text-decoration: none;
       > img {
         width: 30px;
         height: 30px;
@@ -2258,6 +2261,37 @@
           font-weight: 300;
           line-height: 1.4;
           color: #000000b9;
+        }
+      }
+    }
+  }
+  @media (max-width: 540px) {
+    margin-left: 20px;
+    margin-right: 20px;
+    header {
+      margin: 30px auto;
+      .navegation {
+        display: none;
+      }
+    }
+    .termos-servicos,
+    .politica-privacidade {
+      .termos-wrapper,
+      .politica-wrapper {
+        > h1 {
+          font-size: 28px;
+          margin-bottom: 20px;
+        }
+        .termos-txt,
+        .politicas-txt {
+          h3 {
+            font-size: 16px;
+            margin-top: 10px;
+          }
+          p {
+            font-size: 13px;
+            line-height: 1.4;
+          }
         }
       }
     }
