@@ -398,8 +398,6 @@
         letter-spacing: -1px;
         max-width: 730px;
         margin: auto;
-        margin-left: 40px;
-        margin-right: 40px;
       }
       .hello-wrapper-cards {
         display: flex;
@@ -444,7 +442,13 @@
             z-index: -1;
           }
         }
-        @media (max-width: 910px) {
+      }
+      @media (max-width: 910px) {
+        h2 {
+          margin-left: 40px;
+          margin-right: 40px;
+        }
+        .hello-wrapper-cards {
           flex-direction: column;
           .hello-card {
             background-color: #62f5ff;
@@ -1013,6 +1017,7 @@
         margin-left: 40px;
         margin-right: 40px;
         margin-bottom: 40px;
+        justify-content: space-between;
         @media (max-width: 1050px) {
           flex-direction: column;
           margin-left: 10%;
@@ -1030,6 +1035,7 @@
           display: flex;
           position: relative;
           flex-direction: column;
+          flex-shrink: 0;
 
           .price-card-animation {
             position: absolute;
@@ -1141,22 +1147,26 @@
               inset 0 2px 1px #ffffff80, inset 1px 1px 0.25px #ffffff4d;
 
             &.second-price {
-              background-color: #0c55b4;
+              background-color: #2253d3;
             }
-            &.platinum-price {
-              background-color: #65b5ff;
-              color: #000;
-            }
+
             .prices-tittle {
               display: flex;
               justify-content: space-between;
               align-items: center;
               border-bottom: 1px dashed #fff;
               padding-bottom: 20px;
-              > h2 {
-                color: #fff;
-                font-size: 26px;
-                font-weight: 400;
+              .prices-type {
+                > h2 {
+                  color: #fff;
+                  font-size: 26px;
+                  font-weight: 400;
+                }
+                > h3 {
+                  color: #fff;
+                  font-size: 12px;
+                  font-weight: 300;
+                }
               }
               .prices-assinatura {
                 display: flex;
@@ -1171,9 +1181,9 @@
                   padding: 8px 12px;
                   text-transform: uppercase;
                   line-height: 1;
-                  background-color: #0c55b4;
+                  background-color: #2253d3;
                   &.premium {
-                    background-color: #424242;
+                    background-color: #272727;
                   }
                 }
                 .prices-av {
@@ -1191,13 +1201,7 @@
               justify-content: space-between;
               align-items: center;
               margin-top: 40px;
-              &.platinum-value-content {
-                .prices-value {
-                  > h3 {
-                    font-weight: 400;
-                  }
-                }
-              }
+
               .prices-value {
                 align-items: center;
                 display: flex;
@@ -1274,14 +1278,10 @@
                 inset 0 2px 1px #ffffff1c;
 
               &.second-description {
-                background: linear-gradient(#126fd85e, #27272727);
-                border-bottom: 1px solid #0e3f99;
-              }
-              &.platinum-description {
-                background: linear-gradient(#5eb1ff, #3ea2ff);
-                border-bottom: 1px solid #1c5bad;
-                box-shadow: inset 0 1px 0.25px #4accff7c,
-                  inset 0 2px 1px #62abff83;
+                background: linear-gradient(
+                  rgb(18 123 216 / 37%),
+                  rgb(169 175 251 / 14%)
+                );
               }
 
               .prices-incluso {
@@ -1301,35 +1301,42 @@
                   background: linear-gradient(#126ed8, #045ec5);
                   border-bottom: 1px solid #0e3f99;
                 }
-                &.platinum-incluso {
-                  background: linear-gradient(#50aaff, #57acfc);
-                  box-shadow: inset 0 1px 0.25px #ffffff29,
-                    inset 0 2px 1px #ffffff1c;
-                  border-bottom: 1px solid #1c5bad;
-                }
               }
               .prices-desc-wr {
-                grid-column-gap: 16px;
-                grid-template-rows: auto auto;
-                grid-template-columns: 1fr 1fr;
-                grid-auto-columns: 1fr;
-                display: grid;
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
                 > :first-child,
-                > :last-child {
-                  grid-column-gap: 6px;
-                  grid-row-gap: 6px;
-                  flex-flow: column;
+                .prices-desc-txt-obs {
                   display: flex;
+                  flex-direction: column;
+                  gap: 4px;
                   .prices-desc-txt {
                     color: #fff;
                     font-size: 12px;
+                  }
+                }
+                > :first-child {
+                  min-height: 174px;
+                }
+                .prices-desc-txt-obs {
+                  border-top: 1px dashed #ffffff94;
+                  margin-top: 10px;
+                  padding-top: 8px;
+                  .prices-desc-txt-tt {
+                    font-size: 12px;
+                    color: #ffffff;
+                  }
+                  .prices-desc-txt {
+                    font-weight: 200;
+                    color: #ffffffb9;
                   }
                 }
               }
             }
           }
           .prices-box-stiles.active {
-            display: block; // Exibe somente o card ativo
+            display: block;
           }
           .prices-btn {
             margin-top: 40px;
@@ -1356,12 +1363,6 @@
                 color: rgb(43, 43, 43);
               }
             }
-            &.platinum-btn {
-              background: linear-gradient(#50aaff, #57acfc);
-              box-shadow: inset 0 1px 0.25px #ffffff29,
-                inset 0 2px 1px #ffffff1c;
-              border-bottom: 1px solid #1c5bad;
-            }
 
             .prices-btn-img {
               width: 50px;
@@ -1370,10 +1371,6 @@
               background-color: #424242;
               &.second-img {
                 background-color: #ffffff;
-                border: 1px solid #0000003a;
-              }
-              &.platinum-img {
-                background-color: #6db9ff;
                 border: 1px solid #0000003a;
               }
             }
@@ -1506,6 +1503,7 @@
         .prices-box-wrapper {
           display: flex;
           align-items: center;
+
           .prices-box-first {
             min-height: 450px;
             padding: 30px;
@@ -1525,7 +1523,6 @@
               }
             }
           }
-          /* aqui  */
           .prices-box-cards-wr {
             .prices-box-stiles {
               min-width: 300px;
@@ -1602,7 +1599,6 @@
     .faq-container {
       display: flex;
       flex-direction: column;
-      // background-color: #001d30;
       margin-left: 40px;
       margin-right: 40px;
 
@@ -1618,7 +1614,7 @@
       .faq-container-wr {
         display: flex;
         justify-content: space-between;
-        gap: 30px;
+        gap: 50px;
         @media (max-width: 910px) {
           flex-direction: column;
           align-items: center;
@@ -1639,33 +1635,48 @@
             .list-wr {
               display: flex;
               flex-direction: column;
-              gap: 8px;
+              gap: 12px;
               .questions {
                 position: relative;
-                padding-right: 50px;
+                // padding-right: 50px;
                 cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
 
                 .questions-txt {
+                  border-bottom: 1px dashed #d1c2c7ce;
                   .qst {
-                    padding: 0px;
+                    padding-right: 28px;
                     font-size: 18px;
                   }
                   .resp {
-                    margin-top: 5px;
+                    margin-top: 0px;
+                    margin-right: 24px;
+                    margin-bottom: 5px;
                     font-size: 14px;
-                    color: #858585;
+                    color: #6e6e6e;
                     max-height: 0;
                     opacity: 0;
+                    font-weight: 300;
                     overflow: hidden;
                     transition: max-height 0.5s ease, opacity 0.5s ease;
                   }
                 }
-                > img {
+                .tst-img {
                   position: absolute;
-                  right: 0;
+                  right: 0px;
                   top: 14px;
-                  transform: translateY(-50%);
+                  display: flex;
+                  flex-shrink: 0;
+                  width: 30px;
+                  height: 30px;
+                  background-image: url("https://cdn.prod.website-files.com/5837424ae11409586f837994/678548430d58f4cbecec19b8_chevron-down%201.svg");
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-size: 26px;
                   transition: transform 0.3s ease;
+                  transform: translateY(-50%);
                 }
 
                 &.active {
@@ -1675,7 +1686,8 @@
                       opacity: 1;
                     }
                   }
-                  > img {
+
+                  .tst-img {
                     cursor: pointer;
                     transform: translateY(-50%) rotate(90deg);
                   }
@@ -1690,6 +1702,7 @@
           border-radius: 19px;
           padding: 0;
           position: relative;
+          height: 540px;
           .faq-card-animation {
             position: absolute;
           }
@@ -1704,6 +1717,7 @@
             overflow: hidden;
             transform: rotate(0);
             box-shadow: inset 0 2px 1px #d4d4d480, inset 1px 1px 0.2px #ffffff9e;
+            height: 540px;
 
             > :first-child {
               display: flex;
@@ -1861,7 +1875,7 @@
                 margin-bottom: 30px;
               }
               .list-wr {
-                gap: 8px;
+                gap: 10px;
                 .questions {
                   padding-right: 30px;
                   .questions-txt {
@@ -1897,9 +1911,12 @@
           }
 
           .faq-card-wrapper {
+            height: 460px;
             .faq-box {
               width: 310px;
               padding: 24px;
+              height: 460px;
+
               > :first-child {
                 .faq-img-circle {
                   width: 90px;
@@ -2290,7 +2307,6 @@
           }
           p {
             font-size: 13px;
-            line-height: 1.4;
           }
         }
       }
